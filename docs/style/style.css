@@ -1,7 +1,7 @@
 body {
     padding: 0 ;
     text-align: center ;
-    background-image: url(/docs/images/backgroud_pacdev.jpg) ; 
+    background-image: url(../images/backgroud_pacdev.jpg) ; 
     background-size: cover ;
 }
 
@@ -29,7 +29,7 @@ body {
     padding: 20px 0px ;
     overflow: hidden ;
     position: relative ;
-    background-image: url(/docs/images/white-backgroung.jpg) ;
+    background-image: url(../images/white-backgroung.jpg) ;
     background-size:cover; 
     box-shadow: 5px , 10px; 
 }
