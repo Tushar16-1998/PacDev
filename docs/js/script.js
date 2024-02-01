@@ -19,7 +19,7 @@ window.onload = function () {
       game = new Game () ;
       game.start() ;
     }
-  
+
     function handleKeydown (event) {
       const key = event.key ;
       const possibleKeys = [

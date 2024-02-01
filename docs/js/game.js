@@ -32,7 +32,11 @@ class Game {
 
         this.soundtrack = null ;
         this.videos = null ;
-        this.laugh = null ;
+        this.lose = null ;
+        this.collide = null ;
+        this.clap = null ;
+        this.wow = null ;
+        this.yummy = null ;
 
         this.powerUp = null ;
         this.powerUp2 = null ;
@@ -71,6 +75,8 @@ class Game {
     
             if (this.timeLeft <= 0) {
                 clearInterval();
+                this.clap = document.getElementById("clap") ;
+                this.clap.play() ;
                 this.endGame();
                 
             }
@@ -141,24 +147,32 @@ class Game {
             this.score += 30 ;
             this.powerUp.element.remove();
             this.powerUp = null;
+            this.wow = document.getElementById("wow") ;
+            this.wow.play()
         }
 
         if(this.powerUp2 && this.powerUp2.didCollide(this.player)){
             this.score +=15 ;
             this.powerUp2.element.remove();
             this.powerUp2 = null;
+            this.yummy = document.getElementById("yummy") ;
+            this.yummy.play();
         }
 
         if(this.powerUp3 && this.powerUp3.didCollide(this.player)){
             this.score += 10 ;
             this.powerUp3.element.remove();
             this.powerUp3 = null;
+            this.yummy = document.getElementById("yummy") ;
+            this.yummy.play();
         }
 
         if(this.powerUp4 && this.powerUp4.didCollide(this.player)){
             this.score += 5 ;
             this.powerUp4.element.remove();
             this.powerUp4 = null;
+            this.yummy = document.getElementById("yummy") ;
+            this.yummy.play();
         }
 
 //----------------------------------ENEMY 1--------------------------------------//
@@ -170,6 +184,8 @@ class Game {
 
             if(this.player.didCollode(obstacle)){
                 obstacle.element.remove() ;
+                this.collide = document.getElementById("collide") ;
+                this.collide.play()
 
                 this.obstacles.splice(i , 1) ;
 
@@ -188,6 +204,10 @@ class Game {
         }
 
         if(this.lives === 0) {
+
+            this.lose = document.getElementById("lose") ;
+            this.lose.play() ;
+
             this.endGame() ;
         }
 
@@ -210,6 +230,8 @@ class Game {
 
             if(this.player.didCollode(obstacle2)){
                 obstacle2.element.remove() ;
+                this.collide = document.getElementById("collide") ;
+                this.collide.play()
 
                 this.obstacles2.splice(i , 1) ;
 
@@ -228,6 +250,10 @@ class Game {
         }
 
         if(this.lives === 0) {
+
+            this.lose = document.getElementById("lose") ;
+            this.lose.play() ;
+
             this.endGame() ;
         }
 
@@ -250,6 +276,8 @@ class Game {
 
             if(this.player.didCollode(obstacle3)){
                 obstacle3.element.remove() ;
+                this.collide = document.getElementById("collide") ;
+                this.collide.play()
 
                 this.obstacles3.splice(i , 1) ;
 
@@ -268,6 +296,10 @@ class Game {
         }
 
         if(this.lives === 0) {
+
+            this.lose = document.getElementById("lose") ;
+            this.lose.play() ;
+
             this.endGame() ;
         }
 
@@ -288,6 +320,10 @@ class Game {
 
 //------------------------------Time----------------------------// 
         if(this.timeLeft <= 0) {
+            
+            this.clap = document.getElementById("clap") ;
+            this.clap.play() ;
+
             this.endGame()
         }
     }
@@ -333,12 +369,13 @@ class Game {
         // SOUND AND VIDEO
 
         this.soundtrack.pause() ;
+        this.collide.pause() ;
+        this.wow.pause();
+        this.yummy.pause();
 
-        this.laugh = document.getElementById("laugh") ;
-        this.laugh.play() ;
+        /*this.lose = document.getElementById("lose") ;
+        this.lose.play() ;*/
 
-        this.videos = document.getElementById("videos") ;
-        this.videos.play()
     }
     
 }
