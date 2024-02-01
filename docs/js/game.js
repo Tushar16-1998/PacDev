@@ -63,11 +63,19 @@ class Game {
         this.soundtrack = document.getElementById("soundtrack") ;
         this.soundtrack.play() ;
 
-        
+//-------------------TIMER-------------------//
 
         this.timerInterval = setInterval(() => {
-            this.timeLeft--
-        }, 1000) ;
+            this.timeLeft -= 1;
+            document.getElementById("timeRemaining").innerText = `Remaining time: ${this.timeLeft}`;
+    
+            if (this.timeLeft <= 0) {
+                clearInterval();
+                this.endGame();
+                
+            }
+        }, 1000);
+
 
         // Starts the game loop 
 
@@ -230,7 +238,7 @@ class Game {
                 this.obstacles2.push(new Obstacle2(this.gameScreen , this.player)) ;
                 this.isPushingObstacle2 = false ;  
 
-            } , 3500) ;
+            } , 10000) ;
         }
 
 //-----------------------------------ENEMY 3-----------------------------------------//
@@ -270,7 +278,7 @@ class Game {
                 this.obstacles3.push(new Obstacle3(this.gameScreen , this.player)) ;
                 this.isPushingObstacle3 = false ;  
 
-            } , 30000) ;
+            } , 25000) ;
         }
         score.innerHTML = this.score ;
         lives.innerHTML = this.lives ; 
@@ -294,6 +302,8 @@ class Game {
         //Change the gameIsOver status. if its true, remmember that -->
         // -->this is going to break the animation loop
         this.gameIsOver = true ;
+
+        clearInterval(this.timerInterval)
 
         // Remove my Player from the HTML
         this.player.element.remove() ;

@@ -9,6 +9,7 @@ body {
     padding: 20px 0px ;
     align-content: center;
     justify-content: space-evenly ;
+    color: white ;
 }
 
 #game-container {
@@ -22,6 +23,21 @@ body {
     
 }
 
+#boardgame-score {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+}
+#boardgame-score h2 {
+    margin-bottom: 10px;
+}
+#timeRemaining {
+    position: absolute;
+    bottom: 20px;
+    left: 47%;
+    color: white;
+}
 
 #game-screen {
     display: none ;
@@ -30,13 +46,22 @@ body {
     overflow: hidden ;
     position: relative ;
     background-image: url(../images/white-backgroung.jpg) ;
-    background-size:cover; 
     box-shadow: 5px , 10px; 
+}
+
+
+#game-screen img {
+    object-fit: fill ;
 }
 
 #game-end {
     display: none ;
+    color: white;     
+    justify-content: center;
+    align-items: center;  
 }
+
+
 
 .game-intro p {
     font-size: 18px ;
