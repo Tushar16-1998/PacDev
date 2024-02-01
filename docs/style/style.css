@@ -21,10 +21,7 @@ body {
     
     
 }
-#boardgame-score{
-    /*background-image: url(/images/boardgame.png);
-    background-position: center;*/
-}
+
 
 #game-screen {
     display: none ;
