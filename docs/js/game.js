@@ -37,6 +37,7 @@ class Game {
         this.clap = null ;
         this.wow = null ;
         this.yummy = null ;
+        this.omg = null ;
 
         this.powerUp = null ;
         this.powerUp2 = null ;
@@ -276,8 +277,8 @@ class Game {
 
             if(this.player.didCollode(obstacle3)){
                 obstacle3.element.remove() ;
-                this.collide = document.getElementById("collide") ;
-                this.collide.play()
+                this.omg = document.getElementById("omg") ;
+                this.omg.play()
 
                 this.obstacles3.splice(i , 1) ;
 
